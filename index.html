@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pairs Trading</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./Bootswatch_ Lux_files/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="./Bootswatch_ Lux_files/custom.min.css">
+
+<!-- div to hold all divs-->
+
+    <style>
+        div.randy {
+        margin: auto;
+        height: 6000px;
+        width: 70%;
+        background-color: powderblue;
+      }
+      </style>
+
+  <script src='http://d3js.org/d3.v3.min.js' charset="utf-8"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js' charset="utf-8"></script>
+
+  </head>
+  <header>  <center>   <img src="images/banner.jpg"></header></center>  
+  <body>
+     
+    <div class="randy">
+
+    <div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+        
+      <div class="container">
+        <a href="https://bootswatch.com/" class="navbar-brand">Pairs Trading</a>
+        
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav">
+        
+           
+            <li class="nav-item">
+              <a class="nav-link" href="https://blog.bootswatch.com/">Home</a>
+            </li> <li class="nav-item">
+                <a class="nav-link" href="https://bootswatch.com/help/">Contact Us</a>
+              </li>
+              <div class="dropdown-menu" aria-labelledby="download">
+                <a class="dropdown-item" target="_blank" href="https://jsfiddle.net/bootswatch/8zet8yhz/">Open in JSFiddle</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="https://bootswatch.com/4/lux/bootstrap.min.css" download="">bootstrap.min.css</a>
+                <a class="dropdown-item" href="./Bootswatch_ Lux_files/bootstrap.css" download="">bootstrap.css</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="https://bootswatch.com/4/lux/_variables.scss" download="">_variables.scss</a>
+                <a class="dropdown-item" href="https://bootswatch.com/4/lux/_bootswatch.scss" download="">_bootswatch.scss</a>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+
+      <!-- Containers 1
+      ================================================== -->
+      <div class="bs-docs-section">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="containers">          </h1>
+            </div>
+            <div class="bs-component">
+              <div class="jumbotron">
+                   <h4 id="containers"><center><br>Strategizing with Machine Learning</h4></center>
+                <h5 class="display-3"></h5>
+                <p class="lead"></p>
+                <hr class="my-4">
+                <p>What is Pairs Trading?
+                    Pairs trading is a non-directional, relative value investment strategy that seeks to identify 2 companies or funds with similar characteristics whose equity securities are currently trading at a price relationship that is out of their historical trading range. This investment strategy will entail buying the undervalued security while short-selling the overvalued security, all while maintaining market neutrality. It can also be referred to as market neutral or statistical arbitrage.</p>
+                <p class="lead">
+                    <center> <a class="btn btn-primary btn-lg" href="https://bootswatch.com/lux/#" role="button">Learn more</a></center>
+                </p>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+
+
+
+      <!-- Containers 2
+      ================================================== -->
+      <div class="bs-docs-section">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="containers">          </h1>
+            </div>
+            <div class="bs-component">
+              <div class="jumbotron">
+                   <h4 id="containers"><center><br>Pairs Relationships</h4></center>
+                <h5 class="display-3"></h5>
+                <p class="lead"></p>
+                <hr class="my-4">
+                
+    <!-- Typography
+    ================================================== -->
+
+        <!-- Headings -->
+
+        <div class="row">
+          <div class="col-lg-4">
+             <center><h2>NOT Correlation</h2>
+            <div class="bs-component">
+              <center><img src="images/2.jpg"alt="Trulli" width="330" height="333">
+              
+                <br>
+              
+              <p class="lead">When two pairs move in the same direction, they are said to be positively correlated. If they move in opposing directions, the correlation is said to be negative. Identifying these trends can help you predict the movement of one currency pair by observing changes in the other.</p>
+            </center>
+        </div>
+          </div>
+          <div class="col-lg-4">
+              <h2>Cointegration</h2>
+            <div class="bs-component">
+                <img src="images/4.jpg"alt="Trulli" width="330" height="333">
+              
+
+                <br>
+                <p class="lead">Cointegration is a more subtle relationship than correlation. If two time series are cointegrated, there is some linear combination between them that will vary around a mean. At all points in time, the combination between them is related to the same probability distribution.</p>
+             
+        </div>
+
+          </div>
+          <div class="col-lg-4">
+              <h2>Price Spread & Mean
+                 </h2>
+            <div class="bs-component">
+                <img src="images/1.jpg"alt="Trulli" width="330" height="333">
+              
+                <br>
+                <br>
+                <p class="lead">This strategy was pioneered by Nunzio Yargalia in the 1980's. It raminsn an important technique used among hedge funds. They noticed these securities correlated in day-today movement. When these correlated stocks start to drift apart, we can assume the prices will converge and place a hedged trade.</p>
+             </div>
+
+          </div>
+        </div>
+              
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+   
+        
+
+      <!-- Containers 3
+      ================================================== -->
+      <div class="bs-docs-section">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="containers">          </h1>
+            </div>
+            <div class="bs-component">
+              <div class="jumbotron">
+                   <h4 id="containers"><center><br>Lets talk Data!</h4></center>
+                <h5 class="display-3"></h5>
+                <p class="lead"></p>
+                <hr class="my-4">
+                
+    <!-- Typography
+    ================================================== -->
+
+        <!-- Headings -->
+
+        <div class="row">
+          
+            <div class="col-lg-4">
+                <center><h3>Universe of securities</h3>
+               <div class="bs-component">
+                 <center><img src="images/9.jpg"alt="Trulli" width="330" height="333">
+                 
+                   <br>
+                   <br>
+                 <p class="lead">We selected a basket of 1,500 liquid US equities and analyzed the relative performance over the past 2 years. We supplement Returns history with Market Capitalization and Credit Score data to provide additional descriptive parameters. We remove stocks of Companies that do not have a single domin income stream or do not have complete data for the analysis period.</p>
+               </center>
+           </div>
+             </div>
+            <div class="col-lg-4">
+                <center><h3>Cluster of Securities</h3>
+               <div class="bs-component">
+                 <center><img src="images/5.jpg"alt="Trulli" width="330" height="333">
+                 
+                   <br>
+                   <br>
+                 <p class="lead"></h4>We use the scikit-learn DBSCAN unsupervised machine learning algorithm to identify clusters of similar securities within the data. DBSCAN is an alternative to KMeans but has advantages in that it does not require the number of expected clusters to be defined in advance and it ignores stocks that do not neatly fit into clusters. After data cleaning the original 1,500 securities is reduced to 1,364. There are 929,566 pair trades possible and 16 clusters are detected. We use T-SNE to visualize the high dimension data into 2 dimensions. 
+                 </p>
+               </center>
+           </div> 
+             </div>
+         <div class="col-lg-4">
+            <center><h3>Cluster Analysis</h3>
+           <div class="bs-component">
+             <center><img src="images/10.jpg"alt="Trulli" width="330" height="333">
+             
+               <br>
+               <br>
+             <p class="lead">We examine the number of stocks identified in each cluster. Cluster 9 includes 3 securities, including KO (Coca Cola), PEP (Pepsi).
+                    We observe that Proctor & Gamble (Red) is currently outperforming relative to Coca Cola (Blue) and the analysis indicates this relationship is likely to revert to historic mean.
+                   
+                   
+                   
+                   
+                   
+                
+
+                    </p>
+                    <p class="lead">
+                            <center> <a class="btn btn-primary btn-lg" href="https://bootswatch.com/lux/#" role="button">List of Trades</a></center>
+                           </p>
+           </center>
+       </div>
+         </div>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+  
+    
+        
+
+      <!-- Containers 3
+      ================================================== -->
+      <div class="bs-docs-section">
+
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="page-header">
+                  <h1 id="containers">          </h1>
+                </div>
+                <div class="bs-component">
+                  <div class="jumbotron">
+                       <h4 id="containers"><center><br>T-DISTRIBUTED STOCHASTIC NEIGHBOR EMBEDDING & PRINCIPAL COMPONENT ANALYSIS
+                       </h4></center>
+                    <h5 class="display-3"></h5>
+                    <p class="lead"></p>
+                    <hr class="my-4">
+                    
+        <!-- Typography
+        ================================================== -->
+    
+            <!-- Headings -->
+    
+            <div class="row">
+              
+                <div class="col-lg-4">
+                    <center><h3>PCA & T-SNE</h3>
+                   <div class="bs-component">
+                     <center><img src="images/13.jpg">
+                     
+                       <br>
+                       <br>
+                     <p class="lead">PCA is a technique for reducing the number of dimensions in a dataset whilst retaining most information. It is using the correlation between some dimensions and tries to provide a minimum number of variables that keeps the maximum amount of variation or information about how the original data is distributed.</p>
+                   </center>
+               </div>
+                 </div>
+                <div class="col-lg-4">
+                    <center><h3>T-SNE COINTEGRATED PAIRS</h3>
+                   <div class="bs-component">
+                     <center><img src="images/11.jpg">
+                     
+                       <br>
+                       <br>
+                     <p class="lead"></h4>T-SNE is another technique for dimensionality reduction and is particularly well suited for the visualization of high-dimensional datasets. Contrary to PCA it is not a mathematical technique but a probablistic one. <br>Finallylly we evaluate the crs and reduce the original 900K possible trades down to 143. 
+                     </p>
+                   </center>
+               </div> 
+                 </div>
+             <div class="col-lg-4">
+                <center><h3>Conclusion</h3>
+               <div class="bs-component">
+                 <center><img src="images/12.jpg">
+                 
+                   <br>
+                   <br>
+                 <p class="lead">We presented a systematic approach to statistical arbitrage and for trading or constructing "AI" managed porfolio strategies based on mean-reverson.</p>
+                        <p class="lead">
+                               
+                               </p>
+               </center>
+           </div>
+             </div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+    
+      
+    
+    
+
+      <!-- Containers 1
+      ================================================== -->
+      <div class="bs-docs-section">
+
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="page-header">
+                  <h1 id="containers">          </h1>
+                </div>
+                <div class="bs-component">
+                  <div class="jumbotron">
+                       <h4 id="containers"><center><br>Lets Trade!</h4></center>
+                    <h5 class="display-3"></h5>
+                    <p class="lead"></p>
+                    <hr class="my-4">
+                    <p><p class="lead">
+                    
+                    </p>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+
+      <!-- Containers 1
+      ================================================== -->
+      <div class="bs-docs-section">
+
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="page-header">
+                  <h1 id="containers">          </h1>
+                </div>
+                <div class="bs-component">
+                  <div class="jumbotron">
+                      
+                    <h5 class="display-3"></h5>
+                    <p class="lead"></p>
+                    <hr class="my-4">
+          <div>  <center>
+                 <!-- TradingView Widget BEGIN -->
+  
+                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                    <script type="text/javascript">
+                    new TradingView.widget(
+                    {
+                    "width": 1250,
+                    "height": 510,
+                    "symbol": "NASDAQ:AAPL",
+                    "interval": "D",
+                    "timezone": "Etc/UTC",
+                    "theme": "Light",
+                    "style": "1",
+                    "locale": "en",
+                    "toolbar_bg": "#f1f3f6",
+                    "enable_publishing": false,
+                    "allow_symbol_change": true,
+                    
+                  }
+                    );
+                    </script>
+                  </div></center>
+                
+                  <!-- TradingView Widget END -->
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+        </div>
+  
+      <!-- Containers
+      ================================================== -->
+      <
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="col-lg-6">
+           
+            <div class="bs-component">
+
+</div>
+          </div>
+        </div>
+
+        
+          </div>
+        </div>
+      </div>
+
+      
+      </div>
+      <div>
+
+</div>
+    </div>
+
+
+    <script src="./Bootswatch_ Lux_files/jquery.min.js.download"></script>
+    <script src="./Bootswatch_ Lux_files/popper.min.js.download"></script>
+    <script src="./Bootswatch_ Lux_files/bootstrap.min.js.download"></script>
+    <script src="./Bootswatch_ Lux_files/custom.js.download"></script>
+  
+  </div>
+</body>
+<footer id="footer">
+    <div class="row">
+      <div class="col-lg-12">
+
+      </div>
+    </div>
+    
+
+  </footer>
+</html>

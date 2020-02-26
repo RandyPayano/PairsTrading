@@ -326,7 +326,7 @@
   <body>
     <div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
       <div class="container">
-        <a href="../" class="navbar-brand">GitHub</a><img src="../images/notebookgithub.jpg">
+        <a href="https://github.com/RandyPayano/PairsTrading" class="navbar-brand">GitHub</a><img src="../images/notebookgithub.jpg">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -390,7 +390,7 @@
                    </p>
                  </div>
                  <br>
-                 <center> <a class="btn btn-primary btn-lg" href="https://en.wikipedia.org/wiki/Pairs_trade" role="button">Learn more</a></center>
+                 <center> <a class="btn btn-primary btn-sm" href="https://en.wikipedia.org/wiki/Pairs_trade" role="button">Learn more</a></center>
                 </div>
               </div>
             </div>
@@ -421,37 +421,37 @@
 
    <div class="row">
       <div class="col-lg-4">
-         <center><h4>Gathering the Data</h4>
+         <center><h4>Gathering the Data</h4><br>
         <div class="bs-component">
           <center><img src="images/2.jpg"alt="Trulli" width="330" height="190">
           
             <br>
           
-          <p class="lead">A basket of 4000 liquid US equities was selected to analyze their performance over the last two years and find which equities behaved similarly. In addition to returns history, current capitalization and industry category were used to enhance our parameters. Before proceeding companies missing complete data or with a single income stream were removed for more accurate results. </p>
+          <p class="lead"><br>●	4000 US equities were selected to analyze their performance over the last two years and find which equities behaved similarly. <br> ●	In addition to returns history, market capitalization and industry category were used to enhance our parameters. <br> ●	 Companies missing complete data or with a single income stream were removed for more accurate results. </p>
         </center>
     </div>
       </div>
       <div class="col-lg-4">
-          <h4>DBSCAN Clustering</h4>
+          <h4>DBSCAN Clustering</h4><br>
         <div class="bs-component">
             <img src="images/4.jpg"alt="Trulli" width="330" height="190">
           
 
             <br>
-            <p class="lead">Cointegration is a more subtle relationship than correlation. If two time series are cointegrated, there is some linear combination between them that will vary around a mean. At all points in time, the combination between them is related to the same probability distribution.</p>
+            <p class="lead"><br>●	Utilized unsupervised algorithm DBSCAN to find clusters of similar equities. <br> ●	Applied T-SNE cluster visualization algorithm to re-enforced trust in DBSCAN’s final clusters.<br> ● To confirm validation of our clustering we visualize all clusters. </p>
          
     </div>
 
       </div>
       <div class="col-lg-4">
           <h4>Cointegrated Pairs
-             </h4>
+             </h4><br>
         <div class="bs-component">
             <img src="images/1.jpg"alt="Trulli" width="330" height="190">
           
+            
             <br>
-            <br>
-            <p class="lead">After gathering our clusters, we run a function to discover our validated pairs with a 0.03 significance. Our function found 100 co-integrated pairs, T-SNE is then used to visualize our final list of pairs and their relationship. </p>
+            <p class="lead"><br>● With the help of our clusters, we can run a pair validation function with a 0.03 significance. <br> ●	Our function found 100 co-integrated pairs, T-SNE is then used to visualize our final list of pairs and their relationship. </p>
          </div>
 
       </div>
@@ -471,122 +471,13 @@
 
                  </div>
                  <br>
-                 <center> <a class="btn btn-primary btn-lg" href="https://en.wikipedia.org/wiki/Pairs_trade" role="button">Learn more</a></center>
+                 <center> <a class="btn btn-primary btn-sm" href="https://github.com/RandyPayano/PairsTrading/blob/master/data/Pairs-Trading.ipynb" role="button">NoteBook</a></center>
                 </div>
               </div>
             </div>
           </div>
      
       
-
-          <h1>Equity 1: <span id="current"></span></h1>
-
-          <select id="animals">
-            <option value="ABMD">1-ABMD</option>
-            <option value="EXTR">2-EXTR</option>
-            <option value="EXTR">3-EXTR</option>
-            <option value="EXTR">4-EXTR</option>
-            <option value="EXTR">5-EXTR</option>
-            <option value="EXTR">6-EXTR</option>
-            <option value="EXTR">7-EXTR</option>
-            <option value="EXTR">8-EXTR</option>
-            <option value="EXTR">9-EXTR</option>
-            <option value="EXTR">10-EXTR</option>
-            <option value="EXTR">11-EXTR</option>
-            <option value="EXTR">12-EXTR</option>
-            <option value="FEYE">13-FEYE</option>
-            <option value="FEYE">14-FEYE</option>
-
-            <option value="PSXP">15-PSXP</option>
-            <option value="ROKU">16-ROKU</option>
-            <option value="CATS">17-CATS</option>
-            <option value="GTYH">18-GTYH</option>
-            <option value="PCSB">19-PCSB</option>
-            <option value="PCSB">20-PCSB</option>
-            <option value="PCSB">21-PCSB</option>
-            <option value="PCSB">22-PCSB</option>
-            <option value="ARGX">23-ARGX</option>
-            <option value="ASND">24-ASND</option>
-            <option value="EDIT">25-EDIT</option>
-            <option value="APWC">26-APWC</option>
-            <option value="BA">27-BA</option>
-            <option value="AIG">28-AIG</option>
-            <option value="CHL">29-CHL</option>
-            <option value="HSBC">30-HSBC</option>
-            <option value="CELH">31-CELH</option>
-            <option value="CELH">32-CELH</option>
-            <option value="FSBC">33-FSBC</option>
-            <option value="FSBC">34-FSBC</option>
-            <option value="HMG">35-HMG</option>
-            <option value="HMG">36-HMG</option>
-            <option value="RAND">37-RAND</option>
-            <option value="DIS">38-DIS</option>
-            <option value="PANL">39-PANL</option>
-            <option value="PANL">40-PANL</option>
-            <option value="PANL">41-PANL</option>
-            <option value="PRTS">42-PRTS</option>
-            <option value="ALJJ">43-ALJJ</option>
-            <option value="ALJJ">44-ALJJ</option>
-            <option value="ALJJ">45-ALJJ</option>
-            <option value="ALJJ">46-ALJJ</option>
-            <option value="BP">47-BP</option>
-            
-          </select>
-
-
-          <h1>Equity 2: <span id="currentt"></span></h1>
-<select id="animalst">
-  <option value="LBRDA">1-LBRDA</option>
-  <option value="FEYE">2-FEYE</option>
-  <option value="GPRO">3-GPRO</option>
-  <option value="IONS">4-IONS</option>
-  <option value="IPGP">5-IPGP</option>
-  <option value="LBRDA">6-LBRDA</option>
-  <option value="PSXP">7-PSXP</option>
-  <option value="ROKU">8-ROKU</option>
-  <option value="SGEN">9-SGEN</option>
-  <option value="SRPT">10-SRPT</option>
-  <option value="UI">11-UI</option>
-  <option value="WST">12-WST</option>
-  <option value="ROKU">13-ROKU</option>
-  <option value="WST">14-WST</option>
-  <option value="SGEN">15-SGEN</option>
-  <option value="WST">16-WST</option>
-  <option value="IIRP">17-IIPR</option>
-  <option value="SLP">18-SLP</option>
-  <option value="SIEB">19-SIEB</option>
-  <option value="SLP">20-SLP</option>
-  <option value="SSTI">21-SSTI</option>
-  <option value="VERI">22-VERI</option>
-  <option value="MRTX">23-MRTX</option>
-  <option value="QURE">24-QURE</option>
-  <option value="ITCI">25-ITCI</option>
-  <option value="LGL">26-LGL</option>
-  <option value="TSM">27-TSM</option>
-  <option value="CHL">28-CHL</option>
-  <option value="T">29-T</option>
-  <option value="VZ">30-VZ</option>
-  <option value="CMCL">31-CMCL</option>
-  <option value="USAS">32-USAS</option>
-  <option value="RAND">33-RAND</option>
-  <option value="SELF">34-SELF</option>
-  <option value="PW">35-PW</option>
-  <option value="TRMT">36-TRMT</option>
-  <option value="SELF">37-SELF</option>
-  <option value="V">38-V</option>
-  <option value="PRTS">39-PRTS</option>
-  <option value="RELL">40-RELL</option>
-  <option value="WSTG">41-WSTG</option>
-  <option value="WSTG">42-WSTG</option>
-  <option value="CELP">43-CELP</option>
-  <option value="DLHC">44-DLHC</option>
-  <option value="PERI">45-PERI</option>
-  <option value="RCMT">46-RCMT</option>
-  <option value="XOM">47-XOM</option>
-</select>
-
-<p id="selected-dropdown"></p>
-
           <script>
 
 
@@ -760,7 +651,116 @@ animalst.onchange = function(a) {
                 <p class="lead"></p>
                 <hr class="my-4">
 
+              <center>
 
+          <h5>Equity 1: <span id="current"></span></h5>
+
+          <select id="animals">
+            <option value="ABMD">1-ABMD</option>
+            <option value="EXTR">2-EXTR</option>
+            <option value="EXTR">3-EXTR</option>
+            <option value="EXTR">4-EXTR</option>
+            <option value="EXTR">5-EXTR</option>
+            <option value="EXTR">6-EXTR</option>
+            <option value="EXTR">7-EXTR</option>
+            <option value="EXTR">8-EXTR</option>
+            <option value="EXTR">9-EXTR</option>
+            <option value="EXTR">10-EXTR</option>
+            <option value="EXTR">11-EXTR</option>
+            <option value="EXTR">12-EXTR</option>
+            <option value="FEYE">13-FEYE</option>
+            <option value="FEYE">14-FEYE</option>
+
+            <option value="PSXP">15-PSXP</option>
+            <option value="ROKU">16-ROKU</option>
+            <option value="CATS">17-CATS</option>
+            <option value="GTYH">18-GTYH</option>
+            <option value="PCSB">19-PCSB</option>
+            <option value="PCSB">20-PCSB</option>
+            <option value="PCSB">21-PCSB</option>
+            <option value="PCSB">22-PCSB</option>
+            <option value="ARGX">23-ARGX</option>
+            <option value="ASND">24-ASND</option>
+            <option value="EDIT">25-EDIT</option>
+            <option value="APWC">26-APWC</option>
+            <option value="BA">27-BA</option>
+            <option value="AIG">28-AIG</option>
+            <option value="CHL">29-CHL</option>
+            <option value="HSBC">30-HSBC</option>
+            <option value="CELH">31-CELH</option>
+            <option value="CELH">32-CELH</option>
+            <option value="FSBC">33-FSBC</option>
+            <option value="FSBC">34-FSBC</option>
+            <option value="HMG">35-HMG</option>
+            <option value="HMG">36-HMG</option>
+            <option value="RAND">37-RAND</option>
+            <option value="DIS">38-DIS</option>
+            <option value="PANL">39-PANL</option>
+            <option value="PANL">40-PANL</option>
+            <option value="PANL">41-PANL</option>
+            <option value="PRTS">42-PRTS</option>
+            <option value="ALJJ">43-ALJJ</option>
+            <option value="ALJJ">44-ALJJ</option>
+            <option value="ALJJ">45-ALJJ</option>
+            <option value="ALJJ">46-ALJJ</option>
+            <option value="BP">47-BP</option>
+            
+          </select>
+
+
+          <h5>Equity 2: <span id="currentt"></span></h5>
+<select id="animalst">
+  <option value="LBRDA">1-LBRDA</option>
+  <option value="FEYE">2-FEYE</option>
+  <option value="GPRO">3-GPRO</option>
+  <option value="IONS">4-IONS</option>
+  <option value="IPGP">5-IPGP</option>
+  <option value="LBRDA">6-LBRDA</option>
+  <option value="PSXP">7-PSXP</option>
+  <option value="ROKU">8-ROKU</option>
+  <option value="SGEN">9-SGEN</option>
+  <option value="SRPT">10-SRPT</option>
+  <option value="UI">11-UI</option>
+  <option value="WST">12-WST</option>
+  <option value="ROKU">13-ROKU</option>
+  <option value="WST">14-WST</option>
+  <option value="SGEN">15-SGEN</option>
+  <option value="WST">16-WST</option>
+  <option value="IIRP">17-IIPR</option>
+  <option value="SLP">18-SLP</option>
+  <option value="SIEB">19-SIEB</option>
+  <option value="SLP">20-SLP</option>
+  <option value="SSTI">21-SSTI</option>
+  <option value="VERI">22-VERI</option>
+  <option value="MRTX">23-MRTX</option>
+  <option value="QURE">24-QURE</option>
+  <option value="ITCI">25-ITCI</option>
+  <option value="LGL">26-LGL</option>
+  <option value="TSM">27-TSM</option>
+  <option value="CHL">28-CHL</option>
+  <option value="T">29-T</option>
+  <option value="VZ">30-VZ</option>
+  <option value="CMCL">31-CMCL</option>
+  <option value="USAS">32-USAS</option>
+  <option value="RAND">33-RAND</option>
+  <option value="SELF">34-SELF</option>
+  <option value="PW">35-PW</option>
+  <option value="TRMT">36-TRMT</option>
+  <option value="SELF">37-SELF</option>
+  <option value="V">38-V</option>
+  <option value="PRTS">39-PRTS</option>
+  <option value="RELL">40-RELL</option>
+  <option value="WSTG">41-WSTG</option>
+  <option value="WSTG">42-WSTG</option>
+  <option value="CELP">43-CELP</option>
+  <option value="DLHC">44-DLHC</option>
+  <option value="PERI">45-PERI</option>
+  <option value="RCMT">46-RCMT</option>
+  <option value="XOM">47-XOM</option>
+</select>
+
+<p id="selected-dropdown"></p>
+</center>
 
                 <div class="randy">
                     
@@ -775,7 +775,7 @@ animalst.onchange = function(a) {
                     
 
                   </div>
-                  <div class="company"><br><br><br><br><br><br>
+                  <div class="company">
                     
                   </div>
                 </div>

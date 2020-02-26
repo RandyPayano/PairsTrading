@@ -289,7 +289,7 @@ function buildPlot(stock1, stock2) {
 // Add event listener for submit button
 
 
-buildPlot("ABMD","FEYE");
+buildPlot("ABMD","LBRDA");
 
 var elem = document.getElementById('animals');
 var currElem = document.getElementById('current');

@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project 2</title>
+  <link rel="stylesheet" href="bootstrap.min.css" media="screen">
+  <link rel="stylesheet" href="bootstrap.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://unpkg.com/simple-statistics@5.0.0/dist/simple-statistics.min.js"></script>
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+
+  <style>
+    #chart {
+        font-family: "Helvetica Neue";
+        margin-left: -20px;
+        height: 506px;
+    }
+    
+    .dot { stroke: #000; }
+    
+    .axis path, .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+    }
+    
+    .year.label {
+        font: 500 196px "Helvetica Neue";
+        fill: #ddd;
+    }
+    
+    .overlay {
+        fill: none;
+        pointer-events: all;
+        cursor: ew-resize;
+    }
+      .d3-tip {
+      font-family: "Helvetica Neue";
+      line-height: 1;
+      font-weight: bold;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      border-radius: 2px;
+      pointer-events: none;
+    }
+    
+    /* Creates a small triangle extender for the tooltip */
+    .d3-tip:after {
+      box-sizing: border-box;
+      display: inline;
+      font-size: 10px;
+      width: 100%;
+      line-height: 1;
+      color: rgba(0, 0, 0, 0.8);
+      position: absolute;
+      pointer-events: none;
+    }
+    
+    /* Northward tooltips */
+    .d3-tip.n:after {
+      content: "\25BC";
+      margin: -1px 0 0 0;
+      top: 100%;
+      left: 0;
+      text-align: center;
+    }
+    
+    /* Eastward tooltips */
+    .d3-tip.e:after {
+      content: "\25C0";
+      margin: -4px 0 0 0;
+      top: 50%;
+      left: -8px;
+    }
+    
+    /* Southward tooltips */
+    .d3-tip.s:after {
+      content: "\25B2";
+      margin: 0 0 1px 0;
+      top: -8px;
+      left: 0;
+      text-align: center;
+    }
+    
+    /* Westward tooltips */
+    .d3-tip.w:after {
+      content: "\25B6";
+      margin: -4px 0 0 -1px;
+      top: 50%;
+      left: 100%;
+    }
+    </style>
+
+
+<style>
+    div.randy {
+    margin: auto;
+      padding: 1%;
+      width: 100%;
+      font-size: 13px;
+      color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+  }
+  </style>
+    
+</head>
+
+
+
+
+
+
+<body>
+
+
+
+    <div class="container">
+   
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav">
+      
+         
+          <li class="nav-item">
+       
+            <a class="nav-link" href="index.html"> <b>Home</a></b>
+          </li> <li class="nav-item">
+          
+            </li>
+          
+          </li>
+        </ul>
+<br><br><br>
+      </div>  
+      
+      
+    </div>
+  </div>
+
+
+  <img src="../images/notebookgithub.jpg">
+
+
+  <body>
+    <div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+      <div class="container">
+          <a href="https://github.com/RandyPayano/PairsTrading" class="navbar-brand">NoteBook</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav">
+           
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../help/">Help</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://blog.bootswatch.com">Blog</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">Lux <span class="caret"></span></a>
+              <div class="dropdown-menu" aria-labelledby="download">
+                <a class="dropdown-item" target="_blank" href="https://jsfiddle.net/bootswatch/8zet8yhz/">Open in JSFiddle</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="../4/lux/bootstrap.min.css" download>bootstrap.min.css</a>
+                <a class="dropdown-item" href="../4/lux/bootstrap.css" download>bootstrap.css</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="../4/lux/_variables.scss" download>_variables.scss</a>
+                <a class="dropdown-item" href="../4/lux/_bootswatch.scss" download>_bootswatch.scss</a>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Navbar
+      ================================================== -->
+      <div class="bs-docs-section clearfix">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+         
+            </div>
+
+         
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+                </div>
+              </nav>
+            </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project 2</title>
+  <link rel="stylesheet" href="static/bootstrap.min.css" media="screen">
+  <link rel="stylesheet" href="static/bootstrap.css">
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+
+  <style>
+    #chart {
+        font-family: "Helvetica Neue";
+        margin-left: -20px;
+        height: 506px;
+    }
+    
+    .dot { stroke: #000; }
+    
+    .axis path, .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+    }
+    
+    .year.label {
+        font: 500 196px "Helvetica Neue";
+        fill: #ddd;
+    }
+    
+    .overlay {
+        fill: none;
+        pointer-events: all;
+        cursor: ew-resize;
+    }
+      .d3-tip {
+      font-family: "Helvetica Neue";
+      line-height: 1;
+      font-weight: bold;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      border-radius: 2px;
+      pointer-events: none;
+    }
+    
+    /* Creates a small triangle extender for the tooltip */
+    .d3-tip:after {
+      box-sizing: border-box;
+      display: inline;
+      font-size: 10px;
+      width: 100%;
+      line-height: 1;
+      color: rgba(0, 0, 0, 0.8);
+      position: absolute;
+      pointer-events: none;
+    }
+    
+    /* Northward tooltips */
+    .d3-tip.n:after {
+      content: "\25BC";
+      margin: -1px 0 0 0;
+      top: 100%;
+      left: 0;
+      text-align: center;
+    }
+    
+    /* Eastward tooltips */
+    .d3-tip.e:after {
+      content: "\25C0";
+      margin: -4px 0 0 0;
+      top: 50%;
+      left: -8px;
+    }
+    
+    /* Southward tooltips */
+    .d3-tip.s:after {
+      content: "\25B2";
+      margin: 0 0 1px 0;
+      top: -8px;
+      left: 0;
+      text-align: center;
+    }
+    
+    /* Westward tooltips */
+    .d3-tip.w:after {
+      content: "\25B6";
+      margin: -4px 0 0 -1px;
+      top: 50%;
+      left: 100%;
+    }
+    </style>
+    
+</head>
+
+  <body>
+    <div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+      <div class="container">
+        <a href="../" class="navbar-brand">GitHub</a><img src="../images/notebookgithub.jpg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav">
+        
+     
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+
+
+      <!-- Navbar
+      ================================================== -->
+    
+  
+      <div class="container">
+          <div class="jumbotron">
+            <br>
+           
+              <div style="height: 250px">
+                  <img src="../images/banner.jpg" alt=" " style="width: 100%;max-height: 100%" />
+             </div>
+
+            <p></p>
+          </div>
+
+
+      
+          <div class="bs-component">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+      <!-- Containers
+      ================================================== -->
+      <div class="bs-docs-section">
+
+          <div class="row">
+            <div class="col-lg-12">
+              
+              <div class="bs-component">
+                <div class="jumbotron">
+                  <hr class="my-4">
+
+
+
+                  <div class="randy">
+                      <h4 id="containers"><center><br>Strategizing with Machine Learning: Pairs Trading Arbitrage</h4></center>
+                   <h5 class="display-3"></h5>
+                   <p class="lead"></p>
+                   <hr class="my-4">
+                  <center> <h3>What is Pairs Trading?</h3></center>
+                       A pairs trade strategy is based on the <b>historical correlation</b> of two securities. The securities in a pairs trade must have a high positive correlation, which is the primary driver behind the strategy’s profits. This <b>market-neutral</b> strategy is best deployed when a trader identifies a <b>correlation discrepancy</b>. Relying on the historical notion that the two securities will maintain a specified correlation, the pairs trade can be deployed when this correlation falters.
+               
+                       When pairs from the trade deviate, an investor would seek to take a dollar matched the long position in the underperforming security and sell short the outperforming security. If the securities return to their historical correlation, a profit is made from the convergence of the prices.<p class="lead">
+                      
+                   </p>
+                 </div>
+                 <br>
+                 <center> <a class="btn btn-primary btn-lg" href="https://en.wikipedia.org/wiki/Pairs_trade" role="button">Learn more</a></center>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="row">
+            <div class="col-lg-12">
+              
+              <div class="bs-component">
+                <div class="jumbotron">
+                
+                 
+                  <hr class="my-4">
+
+
+
+                  <div class="randy">
+                  
+                   <h5 class="display-3"></h5>
+                   <p class="lead">
+                     
+
+
+
+
+   <!-- Headings -->
+
+   <div class="row">
+      <div class="col-lg-4">
+         <center><h4>Gathering the Data</h4>
+        <div class="bs-component">
+          <center><img src="images/2.jpg"alt="Trulli" width="330" height="190">
+          
+            <br>
+          
+          <p class="lead">A basket of 4000 liquid US equities was selected to analyze their performance over the last two years and find which equities behaved similarly. In addition to returns history, current capitalization and industry category were used to enhance our parameters. Before proceeding companies missing complete data or with a single income stream were removed for more accurate results. </p>
+        </center>
+    </div>
+      </div>
+      <div class="col-lg-4">
+          <h4>DBSCAN Clustering</h4>
+        <div class="bs-component">
+            <img src="images/4.jpg"alt="Trulli" width="330" height="190">
+          
+
+            <br>
+            <p class="lead">Cointegration is a more subtle relationship than correlation. If two time series are cointegrated, there is some linear combination between them that will vary around a mean. At all points in time, the combination between them is related to the same probability distribution.</p>
+         
+    </div>
+
+      </div>
+      <div class="col-lg-4">
+          <h4>Cointegrated Pairs
+             </h4>
+        <div class="bs-component">
+            <img src="images/1.jpg"alt="Trulli" width="330" height="190">
+          
+            <br>
+            <br>
+            <p class="lead">After gathering our clusters, we run a function to discover our validated pairs with a 0.03 significance. Our function found 100 co-integrated pairs, T-SNE is then used to visualize our final list of pairs and their relationship. </p>
+         </div>
+
+      </div>
+    </div>
+          
+           
+
+
+
+
+
+
+
+
+
+
+
+                 </div>
+                 <br>
+                 <center> <a class="btn btn-primary btn-lg" href="https://en.wikipedia.org/wiki/Pairs_trade" role="button">Learn more</a></center>
+                </div>
+              </div>
+            </div>
+          </div>
+     
+      
+
+          <h1>Equity 1: <span id="current"></span></h1>
+
+          <select id="animals">
+            <option value="ABMD">1-ABMD</option>
+            <option value="EXTR">2-EXTR</option>
+            <option value="EXTR">3-EXTR</option>
+            <option value="EXTR">4-EXTR</option>
+            <option value="EXTR">5-EXTR</option>
+            <option value="EXTR">6-EXTR</option>
+            <option value="EXTR">7-EXTR</option>
+            <option value="EXTR">8-EXTR</option>
+            <option value="EXTR">9-EXTR</option>
+            <option value="EXTR">10-EXTR</option>
+            <option value="EXTR">11-EXTR</option>
+            <option value="EXTR">12-EXTR</option>
+            <option value="FEYE">13-FEYE</option>
+            <option value="FEYE">14-FEYE</option>
+
+            <option value="PSXP">15-PSXP</option>
+            <option value="ROKU">16-ROKU</option>
+            <option value="CATS">17-CATS</option>
+            <option value="GTYH">18-GTYH</option>
+            <option value="PCSB">19-PCSB</option>
+            <option value="PCSB">20-PCSB</option>
+            <option value="PCSB">21-PCSB</option>
+            <option value="PCSB">22-PCSB</option>
+            <option value="ARGX">23-ARGX</option>
+            <option value="ASND">24-ASND</option>
+            <option value="EDIT">25-EDIT</option>
+            <option value="APWC">26-APWC</option>
+            <option value="BA">27-BA</option>
+            <option value="AIG">28-AIG</option>
+            <option value="CHL">29-CHL</option>
+            <option value="HSBC">30-HSBC</option>
+            <option value="CELH">31-CELH</option>
+            <option value="CELH">32-CELH</option>
+            <option value="FSBC">33-FSBC</option>
+            <option value="FSBC">34-FSBC</option>
+            <option value="HMG">35-HMG</option>
+            <option value="HMG">36-HMG</option>
+            <option value="RAND">37-RAND</option>
+            <option value="DIS">38-DIS</option>
+            <option value="PANL">39-PANL</option>
+            <option value="PANL">40-PANL</option>
+            <option value="PANL">41-PANL</option>
+            <option value="PRTS">42-PRTS</option>
+            <option value="ALJJ">43-ALJJ</option>
+            <option value="ALJJ">44-ALJJ</option>
+            <option value="ALJJ">45-ALJJ</option>
+            <option value="ALJJ">46-ALJJ</option>
+            <option value="BP">47-BP</option>
+            
+          </select>
+
+
+          <h1>Equity 2: <span id="currentt"></span></h1>
+<select id="animalst">
+  <option value="LBRDA">1-LBRDA</option>
+  <option value="FEYE">2-FEYE</option>
+  <option value="GPRO">3-GPRO</option>
+  <option value="IONS">4-IONS</option>
+  <option value="IPGP">5-IPGP</option>
+  <option value="LBRDA">6-LBRDA</option>
+  <option value="PSXP">7-PSXP</option>
+  <option value="ROKU">8-ROKU</option>
+  <option value="SGEN">9-SGEN</option>
+  <option value="SRPT">10-SRPT</option>
+  <option value="UI">11-UI</option>
+  <option value="WST">12-WST</option>
+  <option value="ROKU">13-ROKU</option>
+  <option value="WST">14-WST</option>
+  <option value="SGEN">15-SGEN</option>
+  <option value="WST">16-WST</option>
+  <option value="IIRP">17-IIPR</option>
+  <option value="SLP">18-SLP</option>
+  <option value="SIEB">19-SIEB</option>
+  <option value="SLP">20-SLP</option>
+  <option value="SSTI">21-SSTI</option>
+  <option value="VERI">22-VERI</option>
+  <option value="MRTX">23-MRTX</option>
+  <option value="QURE">24-QURE</option>
+  <option value="ITCI">25-ITCI</option>
+  <option value="LGL">26-LGL</option>
+  <option value="TSM">27-TSM</option>
+  <option value="CHL">28-CHL</option>
+  <option value="T">29-T</option>
+  <option value="VZ">30-VZ</option>
+  <option value="CMCL">31-CMCL</option>
+  <option value="USAS">32-USAS</option>
+  <option value="RAND">33-RAND</option>
+  <option value="SELF">34-SELF</option>
+  <option value="PW">35-PW</option>
+  <option value="TRMT">36-TRMT</option>
+  <option value="SELF">37-SELF</option>
+  <option value="V">38-V</option>
+  <option value="PRTS">39-PRTS</option>
+  <option value="RELL">40-RELL</option>
+  <option value="WSTG">41-WSTG</option>
+  <option value="WSTG">42-WSTG</option>
+  <option value="CELP">43-CELP</option>
+  <option value="DLHC">44-DLHC</option>
+  <option value="PERI">45-PERI</option>
+  <option value="RCMT">46-RCMT</option>
+  <option value="XOM">47-XOM</option>
+</select>
+
+<p id="selected-dropdown"></p>
+
+          <script>
+
+
+
+/**
+
+ * @param {array} rows
+ * @param {integer} index
+
+ */
+ function unpack(rows, index) {
+  return rows.map(function(row) {
+    return row[index];
+  });
+}
+
+// Calculate a rolling correlation for two arrays
+function rollingCorrelation(arr1, arr2, windowPeriod = 10) {
+  // correlation array to return
+  var corrs = [];
+  for (var i = 0; i < arr1.length - windowPeriod; i++) {
+    // windows of data to perform correlation on
+    var win1 = [];
+    var win2 = [];
+    for (var j = 0; j < windowPeriod; j++) {
+      win1.push(arr1[i + j]);
+      win2.push(arr2[i + j]);
+    }
+    // calculate correlation between two arrays
+    corrs.push(ss.sampleCorrelation(win1, win2));
+  }
+  return corrs;
+}
+
+
+
+
+
+function buildPlot(stock1, stock2) {
+
+
+  var url1 = `https://www.quandl.com/api/v3/datasets/WIKI/${stock1}.json?start_date=2016-10-01&end_date=2017-10-01&api_key=n8ytM4yxbemwLYG_yrRa`;
+  var url2 = `https://www.quandl.com/api/v3/datasets/WIKI/${stock2}.json?start_date=2016-10-01&end_date=2017-10-01&api_key=n8ytM4yxbemwLYG_yrRa`;
+
+  Plotly.d3.json(url1, function(err1, response1) {
+
+    if (err1) return console.warn(err1);
+
+    Plotly.d3.json(url2, function(err2, response2) {
+      if (err2) return console.warn(err2);
+
+      // Grab values from the response json object to build the plots
+      var name1 = response1.dataset.name;
+      var name2 = response2.dataset.name;
+      var stock1 = response1.dataset.dataset_code;
+      var stock2 = response2.dataset.dataset_code;
+      var dates = unpack(response1.dataset.data, 0);
+      var closingPrices1 = unpack(response1.dataset.data, 1);
+      var closingPrices2 = unpack(response2.dataset.data, 1);
+
+      var period = 10;
+      var corrs = rollingCorrelation(closingPrices1, closingPrices2, period);
+      var trace1 = {
+        type: "scatter",
+        mode: "lines",
+        name: `${name1} vs ${name2}`,
+        x: dates.slice(period),
+        y: corrs,
+        line: {
+          color: "#17BECF"
+        }
+      };
+
+      var data = [trace1];
+
+      var layout = {
+        title: `${stock1} ${stock2} Correlation Plot`,
+        xaxis: {
+          type: "date"
+        },
+        yaxis: {
+          autorange: true,
+          type: "linear"
+        }
+      };
+
+      Plotly.newPlot("corplot", data, layout);
+
+    });
+
+  });
+}
+
+// Add event listener for submit button
+
+
+buildPlot("BAC","nvda");
+
+var elem = document.getElementById('animals');
+var currElem = document.getElementById('current');
+
+
+<h3 id="progress-basic">Basic</h3>
+
+currElem.innerHTML = elem.value;
+
+animals.onchange = function(e) {
+   currElem.innerHTML = e.target.value;
+   stockie= currElem.innerHTML
+
+
+   buildPlot(stockie,stockiet);
+
+
+}
+
+
+var elemt = document.getElementById('animalst');
+var currElemt = document.getElementById('currentt');
+
+
+animalst.onchange = function(a) {
+   currElemt.innerHTML = a.target.value;
+   stockiet= currElemt.innerHTML
+
+
+
+
+
+   buildPlot(stockie,stockiet);
+
+}
+  
+       
+            </script>
+          
+
+
+
+
+
+
+
+
+          
+          <div class="bs-component">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+ <!-- Containers
+      ================================================== -->
+      <div class="bs-docs-section">
+
+        <div class="row">
+          <div class="col-lg-12">
+            
+            <div class="bs-component">
+              <div class="jumbotron">
+                <p class="lead"><center> Confirm Pairs by visualizing  their Correlation.</center></p>
+                <p class="lead"></p>
+                <hr class="my-4">
+
+
+
+                <div class="randy">
+                    
+                 <h5 class="display-3"></h5>
+                 
+            <div class="container">
+           
+          
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="panel panel-primary">
+                    
+
+                  </div>
+                  <div class="company"><br><br><br><br><br><br>
+                    
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="panel panel-default">
+                    
+                  </div>
+                  <div id="corplot"></div>
+                </div>
+              </div>
+               <br>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Containers
+      ================================================== -->
+      <div class="bs-docs-section">
+
+        <div class="row">
+          <div class="col-lg-12">
+            
+            <div class="bs-component">
+              <div class="jumbotron">
+   
+                <p class="lead"><center> Research and Visualize each company individually.</center></p>
+                <hr class="my-4">
+
+
+
+                <div class="randy">
+                    <h4 id="containers"><center><br>Company Profile</h4></center>
+              
+               
+            <div class="container">
+           
+          
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="panel panel-primary">
+                    <div class="panel-body">Select Ticker: 
+                        <select id="selDataset" onchange="refresh_data(this.value)"></select>
+                    </div>
+                  </div>
+
+               
+
+                  <div class="company"><br><br><br><br><br><br>
+                    <div id="sample-metadata"></div>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="panel panel-default">
+                    
+                  </div>
+                  <div id="plot"></div>
+                </div>
+              </div>
+            
+          
+              <div class="row">
+                <div class="col-md-12">
+                  <table id="summary-table" class="table table-striped table-inverse">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Open</th>
+                        <th>High</th>
+                        <th>Low</th>
+                        <th>Close</th>
+                        <th>Volume</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+               </div>
+               <br>
+              
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      <!-- Progress
+      ================================================== -->
+      <div class="bs-docs-section">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="progress"></h1>
+            </div>
+
+
+
+        <div class="bs-component">
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+  
+  </script>
+      <footer id="footer">
+      
+   
+        </div>
+
+      </footer>
+
+
+    </div>
+
+
+
+
+    <script src="../_vendor/jquery/dist/jquery.min.js"></script>
+    <script src="../_vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../_assets/js/custom.js"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>

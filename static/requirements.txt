@@ -1,0 +1,8 @@
+django
+gunicorn
+django-heroku
+pymongo==3.9.0
+pandas==0.25.1
+numpy==1.14.3
+jsonify==0.5
+flask

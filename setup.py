@@ -1,11 +1,7 @@
-import os
+
 import pandas as pd
 import numpy as np
 import pymongo
-import requests
-import requests as requests, pandas as pd
-from splinter import Browser 
-from bs4 import BeautifulSoup
 from flask import Flask, render_template
 import pymongo
 from flask import jsonify
@@ -14,12 +10,7 @@ from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
 from bson.json_util import dumps
 import bson.json_util as json_util
-from functools import reduce
-import matplotlib.pyplot as plt
-import matplotlib.cm as cm
 import quandl
-import time
-
 
 # API keys
 quandl.ApiConfig.api_key = 'n8ytM4yxbemwLYG_yrRa'

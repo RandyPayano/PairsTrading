@@ -1,0 +1,43 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+appdirs = "==1.4.3"
+certifi = "==2019.11.28"
+chardet = "==3.0.4"
+click = "==7.0"
+distlib = "==0.3.0"
+dnspython = "==1.16.0"
+filelock = "==3.0.12"
+gunicorn = "==20.0.4"
+idna = "==2.9"
+importlib-metadata = "==1.5.0"
+inflection = "==0.3.1"
+itsdangerous = "==1.1.0"
+more-itertools = "==8.2.0"
+numpy = "==1.18.1"
+pandas = "==1.0.1"
+pipenv = "==2018.11.26"
+pymongo = "==3.10.1"
+python-dateutil = "==2.8.1"
+pytz = "==2019.3"
+requests = "==2.23.0"
+six = "==1.14.0"
+urllib3 = "==1.25.8"
+virtualenv = "==20.0.7"
+virtualenv-clone = "==0.5.3"
+zipp = "==3.0.0"
+Flask = "==1.1.1"
+Flask-PyMongo = "==2.3.0"
+Jinja2 = "==2.11.1"
+MarkupSafe = "==1.1.1"
+Quandl = "==3.5.0"
+Werkzeug = "==1.0.0"
+psycopg2 = "*"
+
+[requires]
+python_version = "3.7"

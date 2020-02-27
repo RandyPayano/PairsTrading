@@ -10,13 +10,21 @@ Pairs Trading | https://pairstrading.herokuapp.com : https://randypayano.github.
 ●	Queried, cleansed and Reduced dimensionality of return and fundamental data for over 5000 equities.
 <br>
 ●	Utilized unsupervised algorithm DBSCAN to find clusters of similar equities.
+<br>
 ●	Applied T-SNE cluster visualization algorithm to re-enforced trust in DBSCAN’s final clusters.
+<br>
 ●	Narrowed down list of 8,203,275 possible pairs to 47 co-integrated pairs with 57 unique equities.
+<br>
 ●	Built Interactive Dashboard for visualization and analysis, comprising:
+<br>
 o	Company informational profile 
+<br>
 o	Live pairs correlation chart 
+<br>
 o	Live price history charts  
+<br>
 •	Tools: Pandas, NumPy, Financial API, PCA, DBSCAN, T-SNE, Flask, MongoDB, Plot.ly, HTML, CSS, Bootstrap, Heroku
+<br>
 
 
 Deployment: https://pairstrading.herokuapp.com/

@@ -1,5 +1,5 @@
 
-<b>Pairs Trading</b>| https://pairstrading.herokuapp.com 
+<b>Pairs Trading</b> | https://pairstrading.herokuapp.com 
 <br>
 
 <b>WHAT IS PAIRS TRADING?</b>
@@ -30,4 +30,3 @@ o	Live price history charts
 <br>
 
 
-Deployment: https://pairstrading.herokuapp.com/

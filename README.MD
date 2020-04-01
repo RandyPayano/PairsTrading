@@ -4,8 +4,7 @@
 Performed cluster analysis on 5,000 equities to discover pairs of equities that are co-integrated for intelligent portfolio management. Useful in implementing a market-neutral trading strategy, pairs trading.<br>
 <br>
 
-<br>
-●	Performed cluster analysis to discover pairs of equities which are co-integrated for intelligent portfolio management. 
+
 <br>
 ●	Queried, cleansed and Reduced dimensionality of return and fundamental data for over 5000 equities.
 <br>

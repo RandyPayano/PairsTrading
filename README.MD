@@ -1,5 +1,5 @@
 
-<b>Pairs Trading</b> | https://pairstrading.herokuapp.com 
+<b>Pairs Trading</b> | https://pairstrading.herokuapp.com <br>
 <br>
 Performed cluster analysis on 5,000 equities to discover pairs of equities that are co-integrated for intelligent portfolio management. Useful in implementing a market-neutral trading strategy, pairs trading.<br>
 <br>

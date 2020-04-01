@@ -5,7 +5,6 @@ Performed cluster analysis on 5,000 equities to discover pairs of equities that 
 <br>
 
 
-<br>
 ●	Queried, cleansed and Reduced dimensionality of return and fundamental data for over 5000 equities.
 <br>
 ●	Utilized unsupervised algorithm DBSCAN to find clusters of similar equities.

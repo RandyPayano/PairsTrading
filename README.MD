@@ -5,7 +5,7 @@ Performed cluster analysis on 5,000 equities to discover pairs of equities that 
 <br>
 
 
-●	Queried, cleansed and Reduced dimensionality of return and fundamental data for over 5000 equities.
+●	Queried, cleansed the return and fundamental data for over 5000 equities.
 <br>
 ●	Utilized unsupervised algorithm DBSCAN to find clusters of similar equities.
 <br>
@@ -21,7 +21,7 @@ o	Live pairs correlation chart
 <br>
 o	Live price history charts  
 <br>
-•	Tools: Pandas, NumPy, Financial API, PCA, DBSCAN, T-SNE, Flask, MongoDB, Plot.ly, HTML, CSS, Bootstrap, Heroku
+•	Tools: Python, Scikit-Learn, Flask, MongoDB, Plot.ly, HTML, CSS
 <br><br>
 <b>WHAT IS PAIRS TRADING?</b>
 <br>
